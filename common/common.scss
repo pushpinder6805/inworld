@@ -1,0 +1,76 @@
+.d-header {
+    background-color: #FAF7F5 !important;
+    height: 3.3em !important;
+}
+.d-header #site-logo {
+    max-width: 50% !important;
+}
+
+.select-kit.combo-box.tag-drop .tag-drop-header{
+    display: none;
+}
+.sidebar-container {
+    background-image: linear-gradient(to left, var(--primary-very-low), var(--secondary));
+}
+.sidebar-wrapper {
+    background: #FAF7F5 !important;
+}
+//test//
+// --------------------------------------------------
+// Banner
+// --------------------------------------------------
+#banner {
+  padding: 1em;
+  background: var(--tertiary-low);
+  color: var(--primary);
+  z-index: z("base") + 1;
+  margin-bottom: 1em;
+  max-height: 20vh;
+  overflow: auto;
+
+  .floated-buttons {
+    float: right;
+    display: flex;
+
+    > .btn {
+      padding-top: 0;
+      padding-bottom: 0;
+      color: var(--primary-high);
+
+      .d-icon {
+        color: var(--primary-medium);
+      }
+
+      &:hover {
+        color: var(--primary);
+
+        .d-icon {
+          color: var(--primary-high);
+        }
+      }
+    }
+
+    .desktop-view & .btn.close {
+      margin-left: 0.25em;
+    }
+  }
+}
+
+#banner-content {
+  hr {
+    border-color: var(--primary-medium);
+  }
+
+  > p:first-child {
+    margin-top: 0;
+  }
+
+  > p:last-child {
+    margin-bottom: 0;
+  }
+
+  a.anchor {
+    display: none;
+  }
+}
+
