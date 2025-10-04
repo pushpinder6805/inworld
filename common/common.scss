@@ -1,3 +1,11 @@
+#banner {
+  display: none;
+}
+.navigation-topics #banner {
+  display: block;
+}
+
+
 .d-header {
     background-color: #FAF7F5 !important;
     height: 3.3em !important;
