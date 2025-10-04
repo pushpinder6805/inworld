@@ -1,0 +1,16 @@
+<script>
+let tries = 0;
+function bindBannerClose() {
+  const btn = document.querySelector('#banner .close');
+  const banner = document.getElementById('banner');
+
+  if (!btn || !banner) {
+    if (++tries < 10) setTimeout(bindBannerClose, 100);
+    return;
+  }
+
+  btn.addEventListener('click', () => banner.remove());
+}
+
+bindBannerClose();
+</script>
