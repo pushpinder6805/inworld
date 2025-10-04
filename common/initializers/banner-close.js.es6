@@ -1,20 +1,22 @@
-// banner-dismiss.js
 api.onPageChange(() => {
-  const btn = document.querySelector('#banner .close');
-  if (btn && !btn.dataset.bound) {
-    btn.dataset.bound = "true"; // avoid double-binding
-    btn.addEventListener('click', () => {
-      const banner = document.getElementById('banner');
-      if (banner) {
-        banner.style.display = 'none';
-        localStorage.setItem('bannerDismissed', 'true');
-      }
-    });
-  }
+  requestAnimationFrame(() => {
+    const banner = document.getElementById("banner");
 
-  // check persisted state
-  if (localStorage.getItem('bannerDismissed') === 'true') {
-    const banner = document.getElementById('banner');
-    if (banner) banner.style.display = 'none';
-  }
+    // Hide if already dismissed
+    if (localStorage.getItem("bannerDismissed") === "true" && banner) {
+      banner.style.display = "none";
+      return;
+    }
+
+    // Bind close button
+    const btn = banner?.querySelector(".close");
+    if (btn && !btn.dataset.bound) {
+      btn.dataset.bound = "true";
+      btn.addEventListener("click", () => {
+        banner.style.display = "none";
+        localStorage.setItem("bannerDismissed", "true");
+      });
+    }
+  });
 });
+
